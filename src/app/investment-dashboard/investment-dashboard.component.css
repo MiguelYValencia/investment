@@ -1,0 +1,131 @@
+.dashboard-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  /* Lista de clientes más pequeña */
+  .client-list {
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  /* Investment details ocupa el resto del espacio */
+  .investment-section {
+    flex: 2;
+    min-width: 400px;
+    display: flex;
+    justify-content: stretch; /* Asegura que el contenido crezca */
+    align-items: stretch; /* Asegura altura completa */
+  }
+  
+  /* Para pantallas pequeñas, los elementos se apilan */
+  @media (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+  
+    .client-list {
+      max-width: 100%;
+    }
+  
+    .investment-section {
+      width: 100%;
+    }
+  }
+  .dashboard-container {
+  display: flex;
+  gap: 20px;
+}
+
+/* En escritorio: se muestran lado a lado */
+@media (min-width: 768px) {
+  .dashboard-container {
+    flex-direction: row;
+  }
+}
+
+/* En móvil: los detalles ocupan toda la pantalla */
+@media (max-width: 767px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .investment-section {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .back-button {
+    display: block;
+    margin: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+  }
+
+  .back-button:hover {
+    text-decoration: underline;
+  }
+}
+.dashboard-container {
+  display: flex;
+  gap: 20px;
+}
+
+/* En escritorio: se muestran lado a lado */
+@media (min-width: 768px) {
+  .dashboard-container {
+    flex-direction: row;
+  }
+}
+
+/* En móvil: los detalles ocupan toda la pantalla */
+@media (max-width: 767px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .investment-section {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* Encabezado de los detalles en móvil */
+  .header-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
+
+  .icon-back {
+    font-size: 22px;
+    color: #007bff;
+  }
+
+  .title {
+    flex-grow: 1;
+    text-align: left;
+  }
+}

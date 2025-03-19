@@ -1,0 +1,20 @@
+<div class="dashboard-container">
+  <!-- Lista de clientes, oculta en móvil cuando showDetails es true -->
+  <app-client-list 
+    *ngIf="!showDetails || isDesktop"
+    (selectClient)="onClientSelected($event)">
+  </app-client-list>
+
+  <!-- Sección de detalles, en móvil ocupa toda la pantalla cuando showDetails es true -->
+  <div class="investment-section full-screen-mobile d-block" *ngIf="selectedClient && (showDetails || isDesktop)">
+    
+    <!-- Botón superior en móviles con "<" y "Portafolio Seleccionado" -->
+    <div class="header-mobile" *ngIf="!isDesktop" (click)="goBack()">
+      <span class="icon-back">&lt;</span>
+      <span class="title" style="text-align: center;">Portafolio Seleccionado</span>
+    </div>
+
+    <!-- Ahora los detalles aparecen debajo del botón -->
+    <app-investment-details [selectedClient]="selectedClient"></app-investment-details>
+  </div>
+</div>
